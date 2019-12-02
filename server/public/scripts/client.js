@@ -1,6 +1,7 @@
 $(document).ready(function() {
     getHerbs();
     $(`#add-herb-btn`).on(`click`, postHerb);
+    $(`#all-herbs`).on(`click`, 'img', expandProduct);
     $(`#all-herbs`).on(`click`, `.delete-btn`, deleteHerb);
     $(`#all-herbs`).on(`click`, `.edit-btn`, editHerbToggle);
     $(`#all-herbs`).on(`click`, `.edit-herb-btn`, editHerbUpdate);
@@ -48,6 +49,26 @@ function editHerbUpdate(){
     }).then(function(response){
         getHerbs();
     })
+}
+
+function expandProduct(){
+    let id = $(this).closest(`span`).data(`id`);
+    let el = $(this).closest(`span`);
+    el.toggleClass(`view-details view-none`);
+    if(el.hasClass(`view-details`)){
+        $.ajax({
+            method: `GET`,
+            url: `/herbs/${id}`
+        }).then(function(response){
+            el.append(`<div class="description" style="font-weight:bold;">${response[0].description}</div>`);
+        }).catch(function(error){
+        alert(`something went wrong`);
+        console.log(error)
+        });
+    }
+    else{
+        $(`.description`).empty();
+    }
 }
 
 function getHerbs(){
