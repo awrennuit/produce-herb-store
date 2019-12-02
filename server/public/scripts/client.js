@@ -1,6 +1,14 @@
 $(document).ready(function() {
     getHerbs();
+    $(`#add-herb-btn`).on(`click`, postHerb);
 });
+
+function choosePoundEach(type){
+    switch(type){
+        case type:
+            return type;
+    }
+}
 
 function getHerbs(){
     $.ajax({
@@ -10,6 +18,27 @@ function getHerbs(){
         renderHerbs(response);
     }).catch(function(error){
     alert(`something went wrong`);
+    console.log(error)
+    });
+}
+
+function postHerb(){
+    let objectToSend = {
+        name: $(`#herb-name-in`).val(),
+        quantity: $(`#qty-in`).val(),
+        price: $(`#price-in`).val(),
+        per: choosePoundEach($(`#price-per-in`).val()),
+        description: $(`#description-in`).val(),
+        image_path: $(`#img-in`).val()
+    }
+    $.ajax({
+        method: `POST`,
+        url: `/herbs`,
+        data: objectToSend
+    }).then(function(response){
+        getHerbs();
+    }).catch(function(error){
+    alert(`Error: input value(s) not accepted.`);
     console.log(error)
     });
 }
