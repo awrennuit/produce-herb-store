@@ -2,6 +2,8 @@ $(document).ready(function() {
     getHerbs();
     $(`#add-herb-btn`).on(`click`, postHerb);
     $(`#all-herbs`).on(`click`, `.delete-btn`, deleteHerb);
+    $(`#search-btn`).on(`click`, searchPage);
+    $(`#reset`).on(`click`, getHerbs);
 });
 
 function choosePoundEach(type){
@@ -92,4 +94,23 @@ function renderHerbs(herbs){
         }
     }
 }
+
+function searchPage(){
+    let objectToSend = {
+        search: $(`#search-in`).val()
+    }
+    $.ajax({
+        method: `POST`,
+        url: `/herbs/search`,
+        data: objectToSend
+    }).then(function(response){
+        $(`#search-in`).val(``);
+        renderHerbs(response);
+    }).catch(function(error){
+    alert(`Error: search not working`);
+    console.log(error)
+    });
+}
+
+
 

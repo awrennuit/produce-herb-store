@@ -35,4 +35,15 @@ shopRouter.post(`/`, (req, res)=>{
     })
 })
 
+shopRouter.post(`/search`, (req, res)=>{
+    let SQLquery = `SELECT * FROM herbs WHERE lower(name) SIMILAR TO $1 ORDER BY name;`;
+    pool.query(SQLquery, ['%' + req.body.search + '%'])
+    .then(result=>{
+        res.send(result.rows);
+    }).catch(error=>{
+        console.log('ERROR SEARCHING HERBS --------------------------->', error);
+        res.sendStatus(500);
+    })
+})
+
 module.exports = shopRouter;
