@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Herb Supply Shop</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="vendors/jquery-3.4.1.min.js"></script>
+    <script src="scripts/client.js"></script>
+</head>
+<body style="background-color: black;">
+    <div id="login-container">
+        <input class="login login-in" id="user-in" type="text" placeholder="username" />
+        <br />
+        <input class="login login-in" id="pass-in" type="password" placeholder="password" />
+        <br />
+        <button class="login" id="login-btn">Log In</button>
+    </div>
+    <script>
+        $(`#login-btn`).on(`click`, function(){
+            window.open(`main.html`, `_self`);
+        });
+    </script>
+</body>
+</html>

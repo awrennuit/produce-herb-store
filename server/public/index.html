@@ -4,32 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Herb Supply Shop</title>
+    <link rel="stylesheet" href="styles/style.css">
     <script src="vendors/jquery-3.4.1.min.js"></script>
     <script src="scripts/client.js"></script>
-    <link rel="stylesheet" href="styles/style.css">
-    <title>Produce & Herb Supply</title>
 </head>
-<body>
-    <div id="align-right">
-        <input id="search-in" type="text" placeholder="search" />
-        <button id="search-btn">Search</button>
-        <button id="reset">Reset</button>
+<body style="background-color: black;">
+    <div id="intro-container">
+        <p class="intro" id="welcome">Hello.</p>
+        <p class="intro" id="about">This is my Week 4 <br /> weekend project onsite at <br /> Prime Digital Academy.</p>
+        <p class="intro" id="thanks">Thank you for viewing.</p>
     </div>
-    <h1>Produce & Herb Supply</h1>
-    <div id="main-in-container">
-        <input class="main-in" id="herb-name-in" type="text" placeholder="add herb" />
-        <input class="main-in" id="qty-in" type="number" placeholder="add quantity" />
-        <input class="main-in" id="price-in" type="number" placeholder="add price" />
-        <select class="main-in" id="price-per-in">
-            <option value="pound">Per Pound</option>
-            <option value="each">Each</option>
-        </select>
-        <input class="main-in" id="img-in" type="text" placeholder="add image" />
-        <textarea class="main-in" id="description-in" rows="4" placeholder="add description"></textarea>
-        <br />
-        <button class="main-in" id="add-herb-btn">Add</button>
-    </div>
-    <div id="all-herbs">
-    </div>
+    <script>
+        $(document).ready(function(){
+            $(`#about, #thanks`).hide();
+            $(`#welcome`).fadeOut(4000,function(){
+                $(`#about`).fadeIn(2500, function(){
+                    $(`#about`).fadeOut(6500, function(){
+                        $(`#thanks`).fadeIn(2500, function(){
+                            $(`#thanks`).fadeOut(4500, function(){
+                                window.open(`login.html`, `_self`);
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

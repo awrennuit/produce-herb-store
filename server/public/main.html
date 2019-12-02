@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vendors/jquery-3.4.1.min.js"></script>
+    <script src="scripts/client.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Produce & Herb Supply</title>
+</head>
+<body>
+    <div id="align-right">
+        <input id="search-in" type="text" placeholder="search" />
+        <button id="search-btn">Search</button>
+        <button id="reset">Reset</button>
+    </div>
+    <h1>Produce & Herb Supply</h1>
+    <div id="main-in-container">
+        <input class="main-in" id="herb-name-in" type="text" placeholder="add herb" />
+        <input class="main-in" id="qty-in" type="number" placeholder="add quantity" />
+        <input class="main-in" id="price-in" type="number" placeholder="add price" />
+        <select class="main-in" id="price-per-in">
+            <option value="pound">Per Pound</option>
+            <option value="each">Each</option>
+        </select>
+        <input class="main-in" id="img-in" type="text" placeholder="add image" />
+        <textarea class="main-in" id="description-in" rows="4" placeholder="add description"></textarea>
+        <br />
+        <button class="main-in" id="add-herb-btn">Add</button>
+    </div>
+    <div id="all-herbs">
+    </div>
+</body>
+</html>

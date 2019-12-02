@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    min-height: 100vh;
+    background-color: rgb(150, 219, 150)
+}
+
+#intro-container {
+    margin: 0;
+    background-color: black;
+    height: 100vh;
+    text-align: center;
+}
+
+.intro {
+    position: absolute;
+    font-size: 3rem;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#login-container {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+}
+
+.login {
+    position: relative;
+    top: 50%;
+}
+
