@@ -1,12 +1,29 @@
 $(document).ready(function() {
     getHerbs();
     $(`#add-herb-btn`).on(`click`, postHerb);
+    $(`#all-herbs`).on(`click`, `.delete-btn`, deleteHerb);
 });
 
 function choosePoundEach(type){
     switch(type){
         case type:
             return type;
+    }
+}
+
+function deleteHerb(){
+    let id = $(this).closest(`span`).data(`id`);
+    let confirmation = confirm(`Are you sure you want to delete ${$(this).closest(`span`).data(`name`)}?`);
+    if(confirmation){
+        $.ajax({
+            method: `DELETE`,
+            url: `/herbs/${id}`
+        }).then(function(response){
+            getHerbs();
+        }).catch(function(error){
+        alert(`something went wrong`);
+        console.log(error)
+        });
     }
 }
 

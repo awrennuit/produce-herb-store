@@ -1,6 +1,17 @@
 const shopRouter = require(`express`).Router();
 const pool = require(`../modules/pool`);
 
+shopRouter.delete(`/:id`, (req, res)=>{
+    let SQLquery = `DELETE FROM herbs WHERE id = $1;`;
+    pool.query(SQLquery, [req.params.id])
+    .then(result=>{
+        res.sendStatus(200)
+    }).catch(error=>{
+        console.log('ERROR DELETING HERB --------------------------->', error);
+        res.sendStatus(500);
+    })
+})
+
 shopRouter.get(`/`, (req, res)=>{
     let SQLquery = "SELECT * FROM herbs ORDER BY lower(name);";
     pool.query(SQLquery)
