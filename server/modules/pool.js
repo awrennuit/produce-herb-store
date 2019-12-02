@@ -18,9 +18,9 @@ if(process.env.DATABASE_URL){
 }
 else{
   config = {
-    database: `herb_stock`,
     host: `localhost`,
     port: 5432,
+    database: `herb_stock`,
     max: 10,
     idleTimeoutMillis: 30000
   };
@@ -28,12 +28,12 @@ else{
 
 const pool = pg.Pool(config);
 
-pool.on(`connect`, (client) => {
+pool.on(`connect`, ()=>{
   console.log('pg connected');
 });
 
-pool.on(`error`, (err, client) => {
-  console.log('Unexpected error in pg', err);
+pool.on(`error`, (error)=>{
+  console.log('Unexpected error in pg', error);
   process.exit(-1);
 });
 
