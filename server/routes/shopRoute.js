@@ -46,4 +46,16 @@ shopRouter.post(`/search`, (req, res)=>{
     })
 })
 
+shopRouter.put(`/:id`, (req, res)=>{
+    let id = [req.body.price, req.params.id];
+    let SQLquery = `UPDATE herbs SET price = $1 WHERE id = $2;`;
+    pool.query(SQLquery, id)
+    .then(result=>{
+        res.sendStatus(201);
+    }).catch(error=>{
+        console.log('ERROR UPDATING HERB --------------------------->', error);
+        res.sendStatus(500);
+    })
+})
+
 module.exports = shopRouter;

@@ -2,6 +2,8 @@ $(document).ready(function() {
     getHerbs();
     $(`#add-herb-btn`).on(`click`, postHerb);
     $(`#all-herbs`).on(`click`, `.delete-btn`, deleteHerb);
+    $(`#all-herbs`).on(`click`, `.edit-btn`, editHerbToggle);
+    $(`#all-herbs`).on(`click`, `.edit-herb-btn`, editHerbUpdate);
     $(`#search-btn`).on(`click`, searchPage);
     $(`#reset`).on(`click`, getHerbs);
 });
@@ -27,6 +29,25 @@ function deleteHerb(){
         console.log(error)
         });
     }
+}
+
+function editHerbToggle(){
+    let el = $(this).parent().children(`br, input, .edit-herb-btn`);
+    el.toggle();
+}
+
+function editHerbUpdate(){
+    let id = $(this).closest(`span`).data(`id`);
+    let objectToSend = {
+        price: $(this).closest(`span`).children(`input`).val()
+    }
+    $.ajax({
+        method: `PUT`,
+        url: `/herbs/${id}`,
+        data: objectToSend
+    }).then(function(response){
+        getHerbs();
+    })
 }
 
 function getHerbs(){

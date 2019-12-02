@@ -37,3 +37,56 @@ body {
     top: 50%;
 }
 
+h1 {
+    padding: 10px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+#align-right {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.herb-img {
+    width: 200px;
+    height: 150px;
+}
+
+#main-in-container {
+    text-align: center;
+}
+
+.main-in {
+    margin: 5px;
+}
+
+span {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(233, 203, 163);
+    border-radius: 8px 8px 25px 25px;
+    text-align: center;
+}
+
+span:hover {
+    background-color: rgb(206, 179, 144);
+    cursor: pointer;
+}
+
+.view-none {
+    transition: 0.3s;
+}
+
+.view-none img {
+    width: 200px;
+    height: 150px;
+    transition: 0.5s;
+}
+
+.view-details img {
+    width: 400px;
+    height: 300px;
+    transition: 0.5s;
+}
