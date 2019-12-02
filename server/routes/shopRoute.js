@@ -1,4 +1,5 @@
-const shopRouter = require(`express`).Router();
+const express = require(`express`);
+const shopRouter = express.Router();
 const pool = require(`../modules/pool`);
 
 shopRouter.delete(`/:id`, (req, res)=>{
