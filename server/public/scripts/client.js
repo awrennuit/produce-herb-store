@@ -153,6 +153,3 @@ function searchPage(){
     console.log(error)
     });
 }
-
-
-
