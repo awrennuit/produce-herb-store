@@ -15,11 +15,11 @@ To see the fully functional site, please visit: https://fierce-tor-83498.herokua
 - Bootstrap https://getbootstrap.com/docs/4.3/getting-started/download/
 
 ## Installation
--Download and install necessary technologies listed above
--Initialize npm (npm init -y)
--Install node express and pg (npm install express pg)
--Create a database named "herb_stock", I recommend using Postico for this
--Start up server, visit localhost:5000 in browser
+- Download and install necessary technologies listed above
+- Initialize npm (npm init -y)
+- Install node express and pg (npm install express pg)
+- Create a database named "herb_stock", I recommend using Postico for this
+- Start up server, visit localhost:5000 in browser
 
 ## Usage
 A user will open the app and be prompted to log in with their credentials (no login credentials currently required). This will bring them to the main page where they can check over their stock. The user can add new products, delete old products, and/or update the price of products as needed. There are a variety of stock photos pre-loaded, but a user can also use a url to grab their product photo(s). Ideally, this would provide a quicker, easier way to track inventory and which items are generating the most money. It sure beats tallying on paper and then adding everything up by hand at the end of the day!
