@@ -9,10 +9,10 @@ To see the fully functional site, please visit: https://fierce-tor-83498.herokua
 ---Right now the database is global, so use at your own risk.---
 
 ## Technologies Used
--Javascript (jQuery) https://jquery.com/download/
--Nodejs (express, pg) https://nodejs.org/en/download/
--PostgreSQL (Postico) https://www.postgresql.org/download/ || https://eggerapps.at/postico/
--Bootstrap https://getbootstrap.com/docs/4.3/getting-started/download/
+- Javascript (jQuery) https://jquery.com/download/
+- Nodejs (express, pg) https://nodejs.org/en/download/
+- PostgreSQL (Postico) https://www.postgresql.org/download/ || https://eggerapps.at/postico/
+- Bootstrap https://getbootstrap.com/docs/4.3/getting-started/download/
 
 ## Installation
 -Download and install necessary technologies listed above
