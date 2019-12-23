@@ -1,4 +1,4 @@
-## PRODUCE & HERB SUPPLY
+# PRODUCE & HERB SUPPLY
 
 ## Description
 Duration: weekend project
@@ -6,7 +6,6 @@ Duration: weekend project
 This project was conceived and built out to reinforce my current knowledge and to expand my skills with things not yet covered in class. The concept was an easy-to-use, universally-friendly app that a vendor at a farmer's market (or any other business type, really) could use to track their product volume and sales. No login is currently required.
 
 To see the fully functional site, please visit: https://fierce-tor-83498.herokuapp.com
----Right now the database is global, so use at your own risk.---
 
 ## Technologies Used
 - Javascript (jQuery) https://jquery.com/download/
