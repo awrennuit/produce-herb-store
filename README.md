@@ -5,8 +5,6 @@ Duration: weekend project
 
 This project was conceived and built out to reinforce my current knowledge and to expand my skills with things not yet covered in class. The concept was an easy-to-use, universally-friendly app that a vendor at a farmer's market (or any other business type, really) could use to track their product volume and sales. No login is currently required.
 
-To see the fully functional site, please visit: https://fierce-tor-83498.herokuapp.com
-
 ## Technologies Used
 - JavaScript (jQuery) https://jquery.com/download/
 - Nodejs (express, pg) https://nodejs.org/en/download/
